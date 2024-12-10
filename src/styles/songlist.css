@@ -1,0 +1,227 @@
+.song-page {
+  padding-bottom: 90px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Regular Playlist */
+.playlist,
+.playlist-favourites {
+  margin-top: 24px;
+}
+
+.playlist-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Favorites Playlist */
+.playlist-favourites .playlist-item {
+  grid-template-columns: 20px 28px 1fr;
+  touch-action: none;
+}
+
+.playlist-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Drag Handle */
+.drag-handle {
+  color: #b3b3b3;
+  cursor: grab;
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+}
+
+.playlist-item:hover .drag-handle,
+.playlist-item:active .drag-handle {
+  opacity: 1;
+}
+
+.playlist-item.dragging .drag-handle {
+  cursor: grabbing;
+  opacity: 1;
+}
+
+/* Song Number */
+.song-number {
+  color: #b3b3b3;
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+}
+
+/* Song Details */
+.song-details {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.song-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.song-title {
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 8px;
+}
+
+.song-duration {
+  color: #b3b3b3;
+  font-size: 14px;
+  padding-right: 8px;
+  text-align: right;
+  min-width: 45px;
+}
+
+.heart-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.heart-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #b3b3b3;
+}
+
+/* Dragging State */
+.playlist-item.dragging {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  z-index: 10;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .playlist-item,
+  .playlist-favourites .playlist-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .playlist-item {
+    touch-action: auto;
+    grid-template-columns: 24px 1fr;
+  }
+
+  .playlist-favourites .playlist-item {
+    touch-action: none;
+    grid-template-columns: 16px 24px 1fr;
+  }
+
+  .song-details {
+    gap: 8px;
+  }
+
+  .song-image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .song-title {
+    font-size: 13px;
+  }
+
+  .song-duration {
+    font-size: 13px;
+    min-width: 40px;
+  }
+
+  .heart-icon {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+  }
+
+  .heart-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .drag-handle {
+    width: 16px;
+    opacity: 0.5;
+  }
+
+  .drag-handle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .song-number {
+    width: 16px;
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  .playlist-item,
+  .playlist-favourites .playlist-item {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .song-details {
+    gap: 6px;
+  }
+
+  .song-image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .heart-icon {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+}

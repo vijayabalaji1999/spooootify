@@ -1,0 +1,43 @@
+.dashboard {
+  padding-bottom: 32px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.prev-btn {
+  padding-left: 12px;
+}
+
+.next-btn {
+  padding-right: 12px;
+}
+
+@media (max-width: 768px) {
+  .navigation-buttons {
+    padding: 0 16px;
+  }
+}
